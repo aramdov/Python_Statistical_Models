@@ -38,7 +38,11 @@ def linearmodel_error(model):
     test_pred = model.predict(fn_test_set)
     modelMAE = mean_absolute_percentage_error(test_real, test_pred)
     return modelMAE
-    
+
+def mean_absolute_percentage_error(y_true, y_pred): 
+    y_true, y_pred = np.array(y_true), np.array(y_pred)
+    return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+
     
     
 ### Polynomial regression splines, cubic and natural, with plot of fit
