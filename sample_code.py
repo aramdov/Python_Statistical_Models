@@ -52,7 +52,7 @@ fit_cubic = sm.GLM(train_set['y'], x_cubic).fit()    # can fit with GLM or OLS e
 fit_cubic.summary()
 
 x_natural = dmatrix('cr(x, knots=(1200, 2750, 3200))', {'x': train_set['variable']})
-fit_natural = sm.GLM(train_set['y'], x_cubic).fit()
+fit_natural = sm.GLM(train_set['y'], x_natural).fit()
 fit_natural.summary()
 
 # For predicting on test set, transform test data 'variable' values into dmatrix with knots then use .predict function
